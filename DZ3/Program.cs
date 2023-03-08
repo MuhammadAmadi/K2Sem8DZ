@@ -27,6 +27,8 @@ void MatrixMultiplication(int[,] mtrxA, int[,] mtrxB)
 
             }
         }
+
+        Console.WriteLine("Произведение двух матриц");
         PrintMatrix(mtrxC);
     }
     else
@@ -68,7 +70,7 @@ void PrintMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            System.Console.Write(matrix[i, j] + " ");
+            Console.Write(matrix[i, j] + " ");
         }
         Console.WriteLine();
     }
@@ -100,10 +102,10 @@ else
     Console.WriteLine("Заполните вторую матрицу");
     matrixB = ArrayFillManually(matrixB);
 }
-
+Console.WriteLine("Матрица 1");
 PrintMatrix(matrixA);
 Console.WriteLine();
+Console.WriteLine("Матрица 2");
 PrintMatrix(matrixB);
 Console.WriteLine();
-
 MatrixMultiplication(matrixA, matrixB);
