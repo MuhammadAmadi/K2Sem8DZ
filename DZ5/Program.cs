@@ -5,7 +5,7 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int[,] ArrayWithRandom(int[,] arr)
+int[,] ArraySpiralFilling(int[,] arr)
 {
     int count = 0,
         row = arr.GetLength(0),
@@ -60,6 +60,6 @@ int Entry(string txt)
 int row = Entry("Введите кол-во строк: ");
 int column = Entry("Введите кол-во столбцов: ");
 int[,] array = new int[row, column];
-array = ArrayWithRandom(array);
+array = ArraySpiralFilling(array);
 PrintMatrix(array);
 Console.WriteLine();
