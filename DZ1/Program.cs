@@ -19,7 +19,6 @@ int[,] ArrayWithRandom(int row, int column)
         {
             arr[i, j] = new Random().Next(1, 10);
         }
-
     }
     return arr;
 }

@@ -71,5 +71,4 @@ int column = Convert.ToInt32(Console.ReadLine());
 int[,] matrix = ArrayWithRandom(row, column);
 PrintMatrix(matrix);
 Console.WriteLine();
-int minSumRow = MinSumRow(matrix);
-Console.WriteLine($"Наименьшая сумма элементов на строке {minSumRow + 1}");
+Console.WriteLine($"Наименьшая сумма элементов на строке {MinSumRow(matrix) + 1}");

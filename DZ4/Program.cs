@@ -6,7 +6,7 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int min, int max)
+int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int minVal, int maxVal)
 {
     int temp;
     bool check = false;
@@ -17,8 +17,8 @@ int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int min, int max)
             for (int k = 0; k < arr.GetLength(2); k++)
             {
                 Random rnd = new Random();
-                temp = rnd.Next(min, max);
-                check = Check(arr, temp);
+                temp = rnd.Next(minVal, maxVal);
+                check = CheckingForRepetition(arr, temp);
                 if (check)
                 {
                     arr[i, j, k] = temp;
@@ -34,7 +34,7 @@ int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int min, int max)
     return arr;
 }
 
-bool Check(int[,,] arr, int value)
+bool CheckingForRepetition(int[,,] arr, int value)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -77,9 +77,9 @@ int Entry(string txt)
 int leaf = Entry("Введите длину третьего измерения: ");
 int row = Entry("Введите длину второго измерения: ");
 int column = Entry("Введите длину первого измерения: ");
-int min = Entry("Введите минимальное значение: ");
-int max = Entry("Введите максимальное значение: ");
+int miNum = Entry("Введите минимальное значение: ");
+int maxNum = Entry("Введите максимальное значение: ");
 int[,,] array = new int[leaf, row, column];
-array = ArrayWithRandomNonRepeating(array, min, max);
+array = ArrayWithRandomNonRepeating(array, miNum, maxNum);
 PrintMatrix(array);
 Console.WriteLine();

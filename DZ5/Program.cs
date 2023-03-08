@@ -62,4 +62,3 @@ int column = Entry("Введите кол-во столбцов: ");
 int[,] array = new int[row, column];
 array = ArraySpiralFilling(array);
 PrintMatrix(array);
-Console.WriteLine();
