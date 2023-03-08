@@ -18,7 +18,7 @@ int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int minVal, int maxVal)
             {
                 Random rnd = new Random();
                 temp = rnd.Next(minVal, maxVal);
-                check = CheckingForRepetition(arr, temp);
+                check = CheckIfItRepeats(arr, temp);
                 if (check)
                 {
                     arr[i, j, k] = temp;
@@ -34,7 +34,7 @@ int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int minVal, int maxVal)
     return arr;
 }
 
-bool CheckingForRepetition(int[,,] arr, int value)
+bool CheckIfItRepeats(int[,,] arr, int value)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {

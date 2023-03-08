@@ -5,11 +5,7 @@
 // 3 2 | 3 3
 // Результирующая матрица будет:
 // 18 20
-// 15 18 
-//      3            4
-//      3            3
-//2 4  2*3+4*3=18 ; 2*4+4*3=20;
-//3 2  3*3+2*3=15 ; 3*4+2*3=18;
+// 15 18
 
 void MatrixMultiplication(int[,] mtrxA, int[,] mtrxB)
 {
@@ -89,6 +85,7 @@ int[,] matrixA = new int[row, column];
 row = Entry("Введите число строк второй матрицы: ");
 column = Entry("Введите число столбцов второй матрицы: ");
 int[,] matrixB = new int[row, column];
+
 if (value > 1)
 {
     matrixA = ArrayWithRandom(matrixA);
@@ -101,6 +98,7 @@ else
     Console.WriteLine("Заполните вторую матрицу");
     matrixB = ArrayFillManually(matrixB);
 }
+
 Console.WriteLine("Матрица 1");
 PrintMatrix(matrixA);
 Console.WriteLine();

@@ -38,7 +38,6 @@ int[,] ArraySpiralFilling(int[,] arr)
     return arr;
 }
 
-
 void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
