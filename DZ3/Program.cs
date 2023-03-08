@@ -24,7 +24,6 @@ void MatrixMultiplication(int[,] mtrxA, int[,] mtrxB)
                 {
                     mtrxC[i, j] += mtrxA[i, k] * mtrxB[k, j];
                 }
-
             }
         }
 
