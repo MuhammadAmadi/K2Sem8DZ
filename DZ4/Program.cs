@@ -6,7 +6,7 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-int[,,] ArrayWithRandom(int[,,] arr, int min, int max)
+int[,,] ArrayWithRandomNonRepeating(int[,,] arr, int min, int max)
 {
     int temp;
     bool check = false;
@@ -54,13 +54,13 @@ bool Check(int[,,] arr, int value)
 
 void PrintMatrix(int[,,] arr)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < arr.GetLength(2); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(0); j++)
         {
-            for (int k = 0; k < arr.GetLength(2); k++)
+            for (int k = 0; k < arr.GetLength(1); k++)
             {
-                Console.Write($"{arr[i, j, k]}({i},{j},{k}) ");
+                Console.Write($"{arr[j, k, i]}({j},{k},{i}) ");
             }
             Console.WriteLine();
         }
@@ -80,6 +80,6 @@ int column = Entry("Введите длину первого измерения:
 int min = Entry("Введите минимальное значение: ");
 int max = Entry("Введите максимальное значение: ");
 int[,,] array = new int[leaf, row, column];
-array = ArrayWithRandom(array, min, max);
+array = ArrayWithRandomNonRepeating(array, min, max);
 PrintMatrix(array);
 Console.WriteLine();
