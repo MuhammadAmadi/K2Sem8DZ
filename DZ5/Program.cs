@@ -7,35 +7,34 @@
 
 int[,] ArrayWithRandom(int[,] arr)
 {
-    //int temp;
-    //bool check = false;
-
     int count = 0,
-        l1 = arr.GetLength(0),
-        l2 = arr.GetLength(1);
+        row = arr.GetLength(0),
+        column = arr.GetLength(1);
+
     for (int g = 0; count < arr.Length; g++)
     {
-        for (int i = 0 + g; count < arr.Length && i < l2 - g; i++)
+        for (int i = g; count < arr.Length && i < column - g; i++)
         {
             count++;
             arr[g, i] = count;
         }
-        for (int j = 1 + g; count < arr.Length && j < l1 - g; j++)
+        for (int j = 1 + g; count < arr.Length && j < row - g; j++)
         {
             count++;
-            arr[j, l2 - 1 - g] = count;
+            arr[j, column - 1 - g] = count;
         }
-        for (int i = l2 - 2 - g; count < arr.Length && i >= g; i--)
+        for (int i = column - 2 - g; count < arr.Length && i >= g; i--)
         {
             count++;
-            arr[l1 - 1 - g, i] = count;
+            arr[row - 1 - g, i] = count;
         }
-        for (int j = l1 - 2 - g; count < arr.Length && j > g; j--)
+        for (int j = row - 2 - g; count < arr.Length && j > g; j--)
         {
             count++;
             arr[j, g] = count;
         }
     }
+    
     return arr;
 }
 
